@@ -15,7 +15,7 @@ public class HttpClient {
 
     private static final String HTTP_SCHEME = "http://";
 
-    private  UpyunHttpResponse doHttpAction(String url, HttpMethod method, Map<String, String> headers) {
+    private static UpyunHttpResponse doHttpAction(String url, HttpMethod method, Map<String, String> headers) {
         HttpRequest request = new HttpRequest(url, method.toString()).headers(headers);
         UpyunHttpResponse response = new UpyunHttpResponse();
         response.setStatusCode(request.code());
@@ -24,11 +24,13 @@ public class HttpClient {
         return response;
     }
 
-    private Signer getSigner(UpyunHttpRequest request) {
+    private static Signer getSigner(UpyunHttpRequest request) {
         return new UpyunHttpSigner(request.getHttpMethod().toString(), request.getResourcePath());
     }
 
-    public <X> X execute(String endpoint, UpyunHttpRequest request, UpyunHttpResponseHandler<X> responseHandler, Credentials credentials) {
+    public static <X> X execute(String endpoint, UpyunHttpRequest request,
+                                UpyunHttpResponseHandler<X> responseHandler,
+                                Credentials credentials) {
         getSigner(request).sign(request, credentials);
         String url = String.format("%s%s%s", HTTP_SCHEME, endpoint, request.getResourcePath());
         UpyunHttpResponse response = doHttpAction(url, request.getHttpMethod(), request.getHeaders());

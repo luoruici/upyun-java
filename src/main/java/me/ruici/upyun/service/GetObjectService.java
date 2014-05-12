@@ -3,6 +3,7 @@ package me.ruici.upyun.service;
 import me.ruici.upyun.UpyunConfig;
 import me.ruici.upyun.handler.ObjectResponseHandler;
 import me.ruici.upyun.http.UpyunHttpRequest;
+import me.ruici.upyun.http.client.HttpClient;
 import me.ruici.upyun.model.GetObjectRequest;
 import me.ruici.upyun.model.UpyunObject;
 import org.slf4j.Logger;
@@ -23,7 +24,7 @@ public class GetObjectService extends BaseService {
     public UpyunObject getObject(GetObjectRequest getObjectRequest) {
         UpyunHttpRequest request = new UpyunHttpRequest(getObjectRequest);
         logger.debug("getting object {} from {}", getObjectRequest.getKey(), getObjectRequest.getBucketName());
-        return client.execute(this.upyunConfig.getEndpoint(), request,
+        return HttpClient.execute(this.upyunConfig.getEndpoint(), request,
                 new ObjectResponseHandler(), this.upyunConfig.getCredentials());
     }
 }
