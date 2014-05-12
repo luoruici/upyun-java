@@ -7,9 +7,11 @@ Usage
 ==========
 
 ```java
-UpyunClient client = new UpyunClient(username, password, bucketName);
+//AUTO Select endpoint; Global Config for Upyun Service.
+UpyunConfig config = new UpyunConfig(username, password, bucketName);
 
 //Get File From Upyun
+GetObjectService service = new GetObjectService(config);
 UpyunObject obj = client.getObject(path); //path should be started with slash
 
 //InputStream that you can manipulate, do not forget close it via UpyunObject.close().
