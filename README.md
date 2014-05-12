@@ -19,7 +19,7 @@ InputStream in = obj.getContent();
 Dependencies
 ==========
 
-* [Guava](https://code.google.com/p/guava-libraries/)
+* [guava-libraries](https://code.google.com/p/guava-libraries/)
 * [http-request](http://kevinsawicki.github.io/http-request/)
 * [slf4j](http://www.slf4j.org/)
 
@@ -28,6 +28,7 @@ Todo
 
 * Exception Handle
 * HTTP Basic Authorization Support
+* OSGi Support
 * Standard API
  - Upload file
  - Get file info
