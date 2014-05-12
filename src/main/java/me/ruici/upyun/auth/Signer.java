@@ -1,8 +1,8 @@
 package me.ruici.upyun.auth;
 
-import me.ruici.upyun.http.HttpRequest;
+import me.ruici.upyun.http.UpyunHttpRequest;
 
 public interface Signer {
 
-    public void sign(HttpRequest request, Credentials credentials);
+    public void sign(UpyunHttpRequest request, Credentials credentials);
 }

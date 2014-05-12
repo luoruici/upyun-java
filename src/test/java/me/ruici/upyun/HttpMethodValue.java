@@ -11,27 +11,28 @@ import static org.junit.Assert.assertEquals;
 public class HttpMethodValue {
 
     @Test
-    public void testHttpGetValue() {
+    public void httpGetValue() {
         assertEquals(HttpMethod.GET.toString(), "GET");
     }
 
     @Test
-    public void testHttpPostValue() {
+    public void httpPostValue() {
         assertEquals(HttpMethod.POST.toString(), "POST");
     }
 
     @Test
-    public void testHttpPutValue() {
+    public void httpPutValue() {
         assertEquals(HttpMethod.PUT.toString(), "PUT");
     }
 
     @Test
-    public void testHttpDeleteValue() {
+    public void httpDeleteValue() {
         assertEquals(HttpMethod.DELETE.toString(), "DELETE");
     }
 
     @Test
-    public void testHttpHeadValue() {
+    public void httpHeadValue() {
         assertEquals(HttpMethod.HEAD.toString(), "HEAD");
     }
+
 }

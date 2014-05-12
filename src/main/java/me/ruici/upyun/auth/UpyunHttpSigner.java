@@ -4,7 +4,7 @@ import com.google.common.base.Charsets;
 import com.google.common.base.Joiner;
 import com.google.common.hash.HashFunction;
 import com.google.common.hash.Hashing;
-import me.ruici.upyun.http.HttpRequest;
+import me.ruici.upyun.http.UpyunHttpRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -31,7 +31,7 @@ public class UpyunHttpSigner implements Signer {
     }
 
     @Override
-    public void sign(HttpRequest request, Credentials credentials) {
+    public void sign(UpyunHttpRequest request, Credentials credentials) {
         if (credentials == null) {
             logger.error("Canonical String will not be signed, as no credentials was provided");
             return;
