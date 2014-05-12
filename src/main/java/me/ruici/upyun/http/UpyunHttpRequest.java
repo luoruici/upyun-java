@@ -15,6 +15,7 @@ public class UpyunHttpRequest {
 
     public <X extends UpyunBaseRequest> UpyunHttpRequest(X originalRequest) {
         this(originalRequest.getHttpMethod(), originalRequest.getResourcePath());
+        this.headers.putAll(originalRequest.getHeaders());
     }
 
     private UpyunHttpRequest(HttpMethod httpMethod, String resourcePath) {

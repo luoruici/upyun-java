@@ -8,10 +8,14 @@ import me.ruici.upyun.http.HttpMethod;
 import me.ruici.upyun.http.UpyunHttpRequest;
 import me.ruici.upyun.http.UpyunHttpResponse;
 import me.ruici.upyun.http.UpyunHttpResponseHandler;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Map;
 
 public class HttpClient {
+
+    public static final Logger logger = LoggerFactory.getLogger(HttpClient.class);
 
     private static final String HTTP_SCHEME = "http://";
 
@@ -21,6 +25,8 @@ public class HttpClient {
         response.setStatusCode(request.code());
         response.setStatusText(request.message());
         response.setContent(request.stream());
+
+        logger.debug("request {} with method {} has result code : {}", url, method, response);
         return response;
     }
 

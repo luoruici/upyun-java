@@ -10,26 +10,18 @@ import org.junit.runners.JUnit4;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.OutputStream;
-import java.util.Properties;
 
 @RunWith(JUnit4.class)
-public class GetObject {
+public class GetObject extends BaseTest {
 
     private GetObjectService getObjectService;
 
     @Before
+    @Override
     public void init() throws IOException {
-        InputStream in = Thread.currentThread().getContextClassLoader().getResourceAsStream("upyun.properties");
-        Properties p = new Properties();
-        p.load(in);
-        UpyunConfig config = new UpyunConfig(
-                p.getProperty("username"),
-                p.getProperty("password"),
-                p.getProperty("bucketName")
-        );
-        this.getObjectService = new GetObjectService(config);
+        super.init();
+        this.getObjectService = new GetObjectService(this.config);
     }
 
     @Test

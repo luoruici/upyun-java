@@ -16,6 +16,6 @@ public class GetObjectRequest extends UpyunObjectRequest {
 
     @Override
     public String getResourcePath() {
-        return String.format("/%s/%s", getBucketName(), getKey());
+        return String.format("/%s%s", getBucketName(), getKey());
     }
 }
