@@ -1,8 +1,27 @@
-upyun-java
+Upyun-Java
 ==========
 
 Java client library for upyun storage.
 
+Usage
+==========
+
+```
+UpyunClient client = new UpyunClient(username, password, bucketName);
+
+//Get File From Upyun
+UpyunObject obj = client.getObject(path); //path should be started with slash
+
+//InputStream that you can manipulate, do not forget close it via UpyunObject.close().
+InputStream in = obj.getContent();
+```
+
+Dependencies
+==========
+
+* [Guava](https://code.google.com/p/guava-libraries/)
+* [http-request](http://kevinsawicki.github.io/http-request/)
+* [slf4j](http://www.slf4j.org/)
 
 Todo
 ==========
