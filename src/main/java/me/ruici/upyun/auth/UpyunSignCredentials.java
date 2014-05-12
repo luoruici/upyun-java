@@ -2,13 +2,13 @@ package me.ruici.upyun.auth;
 
 import com.google.common.base.Preconditions;
 
-public class BasicUpyunSignCredentials implements Credentials {
+public class UpyunSignCredentials implements Credentials {
 
     private String username;
 
     private String password;
 
-    public BasicUpyunSignCredentials(String username, String password) {
+    public UpyunSignCredentials(String username, String password) {
         Preconditions.checkNotNull(username);
         Preconditions.checkNotNull(password);
         this.username = username;
