@@ -6,7 +6,7 @@ Java client library for upyun storage.
 Usage
 ==========
 
-```
+```java
 UpyunClient client = new UpyunClient(username, password, bucketName);
 
 //Get File From Upyun
