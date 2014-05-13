@@ -1,4 +1,4 @@
-package me.ruici.upyun.handler;
+package me.ruici.upyun.http.handler;
 
 import me.ruici.upyun.http.UpyunHttpResponse;
 import me.ruici.upyun.http.UpyunHttpResponseHandler;
@@ -10,7 +10,7 @@ public class ObjectMetadataResponseHandler implements UpyunHttpResponseHandler<O
     public ObjectMetadata handle(UpyunHttpResponse response) {
         ObjectMetadata metadata = new ObjectMetadata();
         ObjectResponseHandler.getObjectMetadata(response, metadata);
-        
+
         return metadata;
     }
 }

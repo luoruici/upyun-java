@@ -1,6 +1,7 @@
-package me.ruici.upyun.auth;
+package me.ruici.upyun.auth.impl;
 
 import com.google.common.base.Preconditions;
+import me.ruici.upyun.auth.Credentials;
 
 public class UpyunSignCredentials implements Credentials {
 

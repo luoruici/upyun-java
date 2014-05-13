@@ -1,7 +1,7 @@
 package me.ruici.upyun;
 
 import me.ruici.upyun.auth.Credentials;
-import me.ruici.upyun.auth.UpyunSignCredentials;
+import me.ruici.upyun.auth.impl.UpyunSignCredentials;
 
 public class UpyunConfig {
 

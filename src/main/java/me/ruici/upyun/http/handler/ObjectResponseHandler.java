@@ -1,4 +1,4 @@
-package me.ruici.upyun.handler;
+package me.ruici.upyun.http.handler;
 
 import com.google.common.primitives.Ints;
 import com.google.common.primitives.Longs;

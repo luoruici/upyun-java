@@ -9,7 +9,7 @@ import com.google.common.io.CharStreams;
 import me.ruici.upyun.UpyunException;
 import me.ruici.upyun.auth.Credentials;
 import me.ruici.upyun.auth.Signer;
-import me.ruici.upyun.auth.UpyunHttpSigner;
+import me.ruici.upyun.auth.impl.UpyunHttpSigner;
 import me.ruici.upyun.http.UpyunHttpRequest;
 import me.ruici.upyun.http.UpyunHttpResponse;
 import me.ruici.upyun.http.UpyunHttpResponseHandler;

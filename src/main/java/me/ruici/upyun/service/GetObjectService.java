@@ -1,7 +1,7 @@
 package me.ruici.upyun.service;
 
 import me.ruici.upyun.UpyunConfig;
-import me.ruici.upyun.handler.ObjectResponseHandler;
+import me.ruici.upyun.http.handler.ObjectResponseHandler;
 import me.ruici.upyun.http.UpyunHttpRequest;
 import me.ruici.upyun.http.client.HttpClient;
 import me.ruici.upyun.model.request.GetObjectRequest;

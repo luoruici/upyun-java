@@ -1,9 +1,11 @@
-package me.ruici.upyun.auth;
+package me.ruici.upyun.auth.impl;
 
 import com.google.common.base.Charsets;
 import com.google.common.base.Joiner;
 import com.google.common.hash.HashFunction;
 import com.google.common.hash.Hashing;
+import me.ruici.upyun.auth.Credentials;
+import me.ruici.upyun.auth.Signer;
 import me.ruici.upyun.http.UpyunHttpRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
