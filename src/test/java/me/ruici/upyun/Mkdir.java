@@ -21,9 +21,8 @@ public class Mkdir extends BaseTest {
         this.mkdirService = new MkdirService(this.config);
     }
 
-    @Test
+    @Test(expected = UpyunException.class)
     public void mkdir() {
-        this.mkdirService.mkdir("/1", false);
-        this.mkdirService.mkdir("/1/2", false);
+        this.mkdirService.mkdir("/testerror/expectedexception", false);
     }
 }

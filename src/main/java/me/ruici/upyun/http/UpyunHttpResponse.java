@@ -13,8 +13,16 @@ public class UpyunHttpResponse {
     private InputStream content;
     private Map<String, String> headers = Maps.newHashMap();
 
+    public String getStatusText() {
+        return statusText;
+    }
+
     public void setStatusText(String statusText) {
         this.statusText = statusText;
+    }
+
+    public int getStatusCode() {
+        return statusCode;
     }
 
     public void setStatusCode(int statusCode) {

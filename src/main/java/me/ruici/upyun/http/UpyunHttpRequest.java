@@ -8,7 +8,10 @@ import java.util.Map;
 
 public class UpyunHttpRequest {
 
+    private Map<String, String> parameters = Maps.newHashMap();
     private Map<String, String> headers = Maps.newHashMap();
+    private Map<String, String> forms = Maps.newHashMap();
+
     private HttpMethod httpMethod;
     private String resourcePath;
     private int contentLength;
@@ -31,12 +34,28 @@ public class UpyunHttpRequest {
         return headers;
     }
 
+    public Map<String, String> getParameters() {
+        return parameters;
+    }
+
+    public Map<String, String> getForms() {
+        return forms;
+    }
+
     public String getResourcePath() {
         return resourcePath;
     }
 
     public void addHeader(String name, String value) {
         this.headers.put(name, value);
+    }
+
+    public void addParameter(String name, String value) {
+        this.parameters.put(name, value);
+    }
+
+    public void addForm(String name, String value) {
+        this.forms.put(name, value);
     }
 
     public int getContentLength() {
