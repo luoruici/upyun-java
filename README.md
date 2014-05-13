@@ -52,13 +52,15 @@ Dependencies
 * [http-request](http://kevinsawicki.github.io/http-request/)
 * [slf4j](http://www.slf4j.org/)
 
+OSGi Support
+==========
+To be Test.
+
 Todo
 ==========
 
 * HTTP Basic Authorization Support
-* OSGi Support
 * Standard API
- - Upload file
  - Delete file
  - Delete dir
  - Get files in dir
