@@ -57,6 +57,11 @@ public class HttpClient {
         return response;
     }
 
+    private static UpyunHttpResponse doHead(String url, Map<String, String> headers, Map<String, String> parameters) {
+        HttpRequest request = HttpRequest.head(url, parameters, true).headers(headers);
+
+        return doResponse(request);
+    }
     private static UpyunHttpResponse doGet(String url, Map<String, String> headers, Map<String, String> parameters)
             throws UpyunException {
         HttpRequest request = HttpRequest.get(url, parameters, true).headers(headers);
@@ -96,6 +101,7 @@ public class HttpClient {
             case DELETE:
                 break;
             case HEAD:
+                response = doHead(url, request.getHeaders(), request.getParameters());
                 break;
             default:
                 throw new UpyunException("Unsupported Http Action");
