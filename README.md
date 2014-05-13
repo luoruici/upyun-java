@@ -54,14 +54,17 @@ Dependencies
 
 OSGi Support
 ==========
-To be Test.
+I'm using [Virgo](http://eclipse.org) now, virgo using logback as logging system. It is proved that out library
+runs correctly in Virgo because virgo set logback bundle as a fragment of slf4j.
+
+But in regular OSGi runtime, slf4j-api bundle cannot find any implementation of `Logger` because of the missing
+Import-Package, I'll working on this issue.
 
 Todo
 ==========
 
 * HTTP Basic Authorization Support
 * Standard API
- - Delete file
  - Delete dir
  - Get files in dir
  - Get storage info of bucket

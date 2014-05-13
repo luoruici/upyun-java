@@ -105,6 +105,12 @@ public class HttpClient {
         return doResponse(request);
     }
 
+    private static UpyunHttpResponse doDelete(String url, Map<String, String> headers) {
+        HttpRequest request = HttpRequest.delete(url).headers(headers);
+
+        return doResponse(request);
+    }
+
     private static Signer getSigner(UpyunHttpRequest request) {
         return new UpyunHttpSigner(request.getHttpMethod().toString(), request.getResourcePath());
     }
@@ -115,7 +121,7 @@ public class HttpClient {
             throws UpyunException {
         getSigner(request).sign(request, credentials);
         String url = String.format("%s%s%s", HTTP_SCHEME, endpoint, request.getResourcePath());
-        UpyunHttpResponse response = null;
+        UpyunHttpResponse response;
         switch (request.getHttpMethod()) {
             case GET:
                 response = doGet(url, request.getHeaders(), request.getParameters());
@@ -127,6 +133,7 @@ public class HttpClient {
                 response = doPut(url, request.getHeaders(), request.getParameters(), request.getForms(), request.getBody());
                 break;
             case DELETE:
+                response = doDelete(url, request.getHeaders());
                 break;
             case HEAD:
                 response = doHead(url, request.getHeaders(), request.getParameters());
