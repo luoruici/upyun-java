@@ -58,7 +58,7 @@ I'm using [Virgo](http://eclipse.org) now, virgo using logback as logging system
 runs correctly in Virgo because virgo set logback bundle as a fragment of slf4j.
 
 But in regular OSGi runtime, slf4j-api bundle cannot find any implementation of `Logger` because of the missing
-Import-Package, I'll working on this issue.
+Import-Package, I'm working on this issue.
 
 Todo
 ==========
