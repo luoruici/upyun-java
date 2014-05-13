@@ -93,6 +93,18 @@ public class HttpClient {
         return doResponse(request);
     }
 
+    private static UpyunHttpResponse doPut(String url, Map<String, String> headers,
+                                           Map<String, String> parameters,
+                                           Map<String, String> forms,
+                                           byte[] body) {
+        HttpRequest request = HttpRequest.put(url, parameters, true).headers(headers).form(forms);
+        if (body != null) {
+            request.send(body);
+        }
+
+        return doResponse(request);
+    }
+
     private static Signer getSigner(UpyunHttpRequest request) {
         return new UpyunHttpSigner(request.getHttpMethod().toString(), request.getResourcePath());
     }
@@ -112,6 +124,7 @@ public class HttpClient {
                 response = doPost(url, request.getHeaders(), request.getParameters(), request.getForms());
                 break;
             case PUT:
+                response = doPut(url, request.getHeaders(), request.getParameters(), request.getForms(), request.getBody());
                 break;
             case DELETE:
                 break;

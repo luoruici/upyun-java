@@ -1,18 +1,17 @@
-package me.ruici.upyun.model;
+package me.ruici.upyun.model.request;
 
 import me.ruici.upyun.http.HttpMethod;
 
-public class GetObjectMetadataRequest extends UpyunObjectRequest {
+public class GetObjectRequest extends UpyunObjectRequest {
 
-
-    public GetObjectMetadataRequest(String bucketName, String key) {
+    public GetObjectRequest(String bucketName, String key) {
         this.setBucketName(bucketName);
         this.setKey(key);
     }
 
     @Override
     public HttpMethod getHttpMethod() {
-        return HttpMethod.HEAD;
+        return HttpMethod.GET;
     }
 
     @Override

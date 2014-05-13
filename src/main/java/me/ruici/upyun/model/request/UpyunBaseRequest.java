@@ -1,4 +1,4 @@
-package me.ruici.upyun.model;
+package me.ruici.upyun.model.request;
 
 import com.google.common.collect.Maps;
 import me.ruici.upyun.http.HttpMethod;

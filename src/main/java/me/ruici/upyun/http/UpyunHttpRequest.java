@@ -2,7 +2,7 @@ package me.ruici.upyun.http;
 
 import com.google.common.base.Objects;
 import com.google.common.collect.Maps;
-import me.ruici.upyun.model.UpyunBaseRequest;
+import me.ruici.upyun.model.request.UpyunBaseRequest;
 
 import java.util.Map;
 
@@ -11,6 +11,8 @@ public class UpyunHttpRequest {
     private Map<String, String> parameters = Maps.newHashMap();
     private Map<String, String> headers = Maps.newHashMap();
     private Map<String, String> forms = Maps.newHashMap();
+
+    private byte[] body;
 
     private HttpMethod httpMethod;
     private String resourcePath;
@@ -21,9 +23,19 @@ public class UpyunHttpRequest {
         this.headers.putAll(originalRequest.getHeaders());
     }
 
+    public <X extends UpyunBaseRequest> UpyunHttpRequest(X originalRequest, byte[] body) {
+        this(originalRequest);
+        this.body = body;
+        this.contentLength = body.length;
+    }
+
     private UpyunHttpRequest(HttpMethod httpMethod, String resourcePath) {
         this.httpMethod = httpMethod;
         this.resourcePath = resourcePath;
+    }
+
+    public byte[] getBody() {
+        return body;
     }
 
     public HttpMethod getHttpMethod() {

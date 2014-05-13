@@ -4,7 +4,7 @@ import me.ruici.upyun.UpyunConfig;
 import me.ruici.upyun.handler.ObjectMetadataResponseHandler;
 import me.ruici.upyun.http.UpyunHttpRequest;
 import me.ruici.upyun.http.client.HttpClient;
-import me.ruici.upyun.model.GetObjectMetadataRequest;
+import me.ruici.upyun.model.request.GetObjectMetadataRequest;
 import me.ruici.upyun.model.ObjectMetadata;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,7 +23,6 @@ public class GetObjectMetadataService extends BaseService {
 
     public ObjectMetadata getObjectMetadata(GetObjectMetadataRequest getObjectMetadataRequest) {
         UpyunHttpRequest request = new UpyunHttpRequest(getObjectMetadataRequest);
-        logger.debug("get object {} metadata from {}", getObjectMetadataRequest.getKey(), getObjectMetadataRequest.getBucketName());
 
         return HttpClient.execute(this.upyunConfig.getEndpoint(), request,
                 new ObjectMetadataResponseHandler(), this.upyunConfig.getCredentials());

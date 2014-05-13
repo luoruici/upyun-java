@@ -1,4 +1,4 @@
-package me.ruici.upyun.model;
+package me.ruici.upyun.model.request;
 
 public abstract class UpyunObjectRequest extends UpyunBaseRequest {
 

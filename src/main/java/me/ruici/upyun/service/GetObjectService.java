@@ -4,7 +4,7 @@ import me.ruici.upyun.UpyunConfig;
 import me.ruici.upyun.handler.ObjectResponseHandler;
 import me.ruici.upyun.http.UpyunHttpRequest;
 import me.ruici.upyun.http.client.HttpClient;
-import me.ruici.upyun.model.GetObjectRequest;
+import me.ruici.upyun.model.request.GetObjectRequest;
 import me.ruici.upyun.model.UpyunObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

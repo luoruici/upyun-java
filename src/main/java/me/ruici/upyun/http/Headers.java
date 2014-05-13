@@ -17,8 +17,15 @@ public interface Headers {
     public static final String LAST_MODIFIED = "Last-Modified";
     public static final String SERVER = "Server";
 
+    /* Upyun File Info Header */
     public static final String UPYUN_FILE_TYPE = "x-upyun-file-type";
     public static final String UPYUN_FILE_SIZE = "x-upyun-file-size";
     public static final String UPYUN_FILE_DATE = "x-upyun-file-date";
+
+    /* Upyun Image Response Header */
+    public static final String UPYUN_WIDTH = "x-upyun-width";
+    public static final String UPYUN_HEIGHT = "x-upyun-height";
+    public static final String UPYUN_FRAMES = "x-upyun-frames";
+    public static final String UPYUN_IMAGE_FILE_TYPE = "x-upyun-file-type";
 
 }

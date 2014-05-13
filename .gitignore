@@ -17,3 +17,4 @@ hs_err_pid*
 
 # upyun username/password/bucket config for test
 upyun.properties
+src/test/resources/*.JPG
