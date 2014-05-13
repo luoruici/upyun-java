@@ -2,6 +2,9 @@ package me.ruici.upyun.http.client;
 
 import com.github.kevinsawicki.http.HttpRequest;
 import com.google.common.base.Charsets;
+import com.google.common.base.Function;
+import com.google.common.base.Joiner;
+import com.google.common.collect.Maps;
 import com.google.common.io.CharStreams;
 import me.ruici.upyun.UpyunException;
 import me.ruici.upyun.auth.Credentials;
@@ -15,6 +18,7 @@ import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.List;
 import java.util.Map;
 
 public class HttpClient {
@@ -27,12 +31,23 @@ public class HttpClient {
         return response.getStatusCode() / 100 == 2;
     }
 
+    private static Map<String, String> getResponseHeaders(Map<String, List<String>> headers) {
+
+        return Maps.transformValues(headers, new Function<List<String>, String>() {
+            @Override
+            public String apply(List<String> input) {
+                return Joiner.on(',').join(input);
+            }
+        });
+    }
+
     private static UpyunHttpResponse doResponse(HttpRequest request) throws UpyunException {
         UpyunHttpResponse response = new UpyunHttpResponse();
         try {
             response.setStatusCode(request.code());
             response.setStatusText(request.message());
             response.setContent(request.stream());
+            response.getHeaders().putAll(getResponseHeaders(request.headers()));
             logger.debug("response code is {}", response.getStatusCode());
             if (!isRequestSuccessful(response)) {
                 UpyunException upyunException = new UpyunException();

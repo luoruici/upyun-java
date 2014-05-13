@@ -1,5 +1,7 @@
 package me.ruici.upyun.model;
 
+import com.google.common.base.Objects;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.Maps;
 
 import java.util.Date;
@@ -21,19 +23,24 @@ public class ObjectMetadata {
             return this.value;
         }
 
+        public static ObjectType fromString(String value) {
+            Preconditions.checkNotNull(value);
+            for (ObjectType type : ObjectType.values()) {
+                if (value.equals(type.value)) {
+                    return type;
+                }
+            }
+            return null;
+        }
     }
 
-    private Map<String, Object> metadata;
+    private Map<String, Object> metadata = Maps.newHashMap();
 
     private ObjectType type;
 
     private int size;
 
     private Date created;
-
-    public ObjectMetadata() {
-        this.metadata = Maps.newHashMap();
-    }
 
     public ObjectType getType() {
         return type;
@@ -57,5 +64,15 @@ public class ObjectMetadata {
 
     public void setCreated(Date created) {
         this.created = created;
+    }
+
+    @Override
+    public String toString() {
+        return Objects.toStringHelper(this)
+                .add("type", getType())
+                .add("size", getSize())
+                .add("createdDate", getCreated())
+                .toString();
+
     }
 }
