@@ -4,7 +4,7 @@
 
   <groupId>me.ruici</groupId>
   <artifactId>upyun-java</artifactId>
-  <version>0.0.2-SNAPSHOT</version>
+  <version>0.0.2</version>
 
   <developers>
     <developer>
@@ -16,7 +16,7 @@
 
   <scm>
     <developerConnection>scm:git:git@github.com:luoruici/upyun-java.git</developerConnection>
-    <tag>HEAD</tag>
+    <tag>v0.0.2</tag>
   </scm>
 
   <build>
