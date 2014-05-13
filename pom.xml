@@ -56,7 +56,7 @@
             <Require-Bundle />
             <Export-Package>me.ruici.upyun,me.ruici.upyun.auth,me.ruici.upyun.http,me.ruici.upyun.http.client,me.ruici.upyun.model,me.ruici.upyun.service</Export-Package>
             <Private-Package>me.ruici.upyun.model.request,me.ruici.upyun.http.handler</Private-Package>
-            <Bundle-RequiredExecutionEnvironment>J2SE-1.6</Bundle-RequiredExecutionEnvironment>
+            <Bundle-RequiredExecutionEnvironment>JavaSE-1.6</Bundle-RequiredExecutionEnvironment>
           </instructions>
         </configuration>
         <executions>
